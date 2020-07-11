@@ -3,6 +3,7 @@ Serving flat pages with Django without views and database.
 
 Helps to separate deployment of front- and backend.
 
+![](https://travis-ci.org/dldevinc/django-flatly.svg?branch=master)
 
 ## Installation
 Install the latest release with pip:
