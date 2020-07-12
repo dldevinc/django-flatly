@@ -1,9 +1,11 @@
 import posixpath
+
 from django.conf import settings
 from django.http import Http404, HttpResponse
 from django.template.exceptions import TemplateDoesNotExist
+
 from . import conf
-from .helpers import safe_join, get_template_by_name
+from .helpers import get_template_by_name, safe_join
 
 
 def serve(request, path):
