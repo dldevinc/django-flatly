@@ -59,14 +59,10 @@ FLATLY_TEMPLATE_ROOT = 'flatly'
 By adding the above configuration `django-flatly` will add
 specified path prefix to the template name before search.
 
-Suppose you are requesting the page `/account/user/`,
-`django-flatly` will call something like
-```get_template('flatly/account/user.html')```.
-
 Note that `flatly` folder can be located in both root and
 application template directories.
 
-Defaults to `None`.
+Defaults to `flatly`.
 
 ### Template engine
 You can restrict the template search to a particular template engine.
@@ -82,7 +78,7 @@ List of file extensions to iterate over all matching files.
 ```python
 FLATLY_EXTENSIONS = ['html', 'jinja2']
 ```
-Defaults to `html`.
+Defaults to `['html']`.
 
 ## Development and Testing
 After cloning the Git repository, you should install this
