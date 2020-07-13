@@ -29,9 +29,9 @@ urlpatterns = [
     FLATLY_TEMPLATE_ROOT = 'flatly'
     ```
 
-3) Any `.html` files you create in your `flatly` directory 
-will be automatically served. So if you create a new file 
-`flatly/about_us/overview.html` then it will be visible at 
+3) Any `.html` files you create in your `flatly` directory
+will be automatically served. So if you create a new file
+`flatly/about_us/overview.html` then it will be visible at
 `/about-us/overview/`.
 
 Note that `django-flatly` automatically replaces underscores (_)
@@ -48,19 +48,19 @@ Suppose you are requesting the page `/account/user-profile/`,
 ## Settings
 
 ### Template root
-`django-flatly` based on Django's `get_template` function. 
-So, any user can access any template on your website. You can 
+`django-flatly` based on Django's `get_template` function.
+So, any user can access any template on your website. You can
 restrict access to certain templates by adding the following:
 
 ```python
 FLATLY_TEMPLATE_ROOT = 'flatly'
 ```
 
-By adding the above configuration `django-flatly` will add  
-specified path prefix to the template name before search. 
+By adding the above configuration `django-flatly` will add
+specified path prefix to the template name before search.
 
 Suppose you are requesting the page `/account/user/`,
-`django-flatly` will call something like 
+`django-flatly` will call something like
 ```get_template('flatly/account/user.html')```.
 
 Note that `flatly` folder can be located in both root and
@@ -85,16 +85,11 @@ FLATLY_EXTENSIONS = ['html', 'jinja2']
 Defaults to `html`.
 
 ## Development and Testing
-After cloning the Git repository, you should install this 
+After cloning the Git repository, you should install this
 in a virtualenv and set up for development:
 ```shell script
 virtualenv .venv
 source .venv/bin/activate
-pip install -e .[dev]
-```
-Then, you can run tests:
-```shell script
-pytest
-# or
-tox -e py38-django30
+pip install -r ./requirements_dev.txt
+pre-commit install
 ```
