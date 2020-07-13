@@ -14,6 +14,7 @@ install:
 branches:
   only:
   - master
+  - '/^v?\d(\.\d+)+$/'
 
 script:
 - python setup.py sdist
