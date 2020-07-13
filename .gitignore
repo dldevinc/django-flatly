@@ -106,4 +106,4 @@ ENV/
 .vscode/
 
 # tests
-tests/db.sqlite3
+**/tests/db.sqlite3
