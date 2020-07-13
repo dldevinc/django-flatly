@@ -5,6 +5,7 @@ python:
 - 3.6
 
 before_install:
+- pip install twine
 - pip install -U pip setuptools wheel tox-travis
 
 install:
