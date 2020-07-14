@@ -73,6 +73,24 @@ FLATLY_ENGINE = 'jinja2'
 
 Defaults to `None`.
 
+### Template caching
+By default (when `DEBUG` is `True`), the template system
+searches, reads and compiles your templates every time
+they’re rendered. It's convenient for local development,
+because no need to restart the server after adding/removing
+templates.
+
+You can enforce template caching:
+
+```python
+FLATLY_CACHE_ENABLED = True
+```
+
+The cached `Template` instance is returned for subsequent
+requests to load the same template.
+
+Defaults to `True` is `settings.DEBUG` is `False`.
+
 ### Extensions
 List of file extensions to iterate over all matching files.
 ```python
