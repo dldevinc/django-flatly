@@ -22,3 +22,7 @@ class TestAppendSlash:
     def test_flatly_with_slash(self):
         response = self.client.get('/app/')
         assert response.status_code == 200
+
+    def test_missing(self):
+        response = self.client.get('/missing')
+        assert response.status_code == 404
