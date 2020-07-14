@@ -1,5 +1,6 @@
 import posixpath
 
+import django
 from django.template.exceptions import TemplateDoesNotExist
 from django.urls import Resolver404, ResolverMatch, URLPattern
 from django.urls.resolvers import RegexPattern
@@ -29,9 +30,12 @@ class FlatlyURLPattern(URLPattern):
             except TemplateDoesNotExist:
                 raise Resolver404({})
 
-            return ResolverMatch(
-                self.callback, (template,), {}, route=str(self.pattern)
-            )
+            if django.VERSION >= (2, 2):
+                return ResolverMatch(
+                    self.callback, (template,), {}, route=str(self.pattern)
+                )
+            else:
+                return ResolverMatch(self.callback, (template,), {})
 
 
 def flatly_path(route, view):
