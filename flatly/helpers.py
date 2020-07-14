@@ -1,6 +1,5 @@
 import posixpath
 
-from django.template.backends.django import copy_exception
 from django.template.base import Origin
 from django.template.exceptions import TemplateDoesNotExist
 from django.template.loader import _engine_list
@@ -70,16 +69,10 @@ def check_possible_template_paths(engine, name):
 
 
 def get_template_by_name(name: str):
-    cached = template_cache.get(name)
-    if cached:
-        if isinstance(cached, type):
-            if issubclass(cached, TemplateDoesNotExist):
-                raise cached(name)
-            else:
-                raise cached()
-        elif isinstance(cached, TemplateDoesNotExist):
-            raise copy_exception(cached)
-        return cached
+    if conf.CACHE_ENABLED:
+        cached = template_cache.get(name)
+        if cached:
+            return cached
 
     chain = []
     engines = _engine_list(conf.ENGINE)
@@ -92,6 +85,4 @@ def get_template_by_name(name: str):
             template_cache[name] = template
             return template
 
-    exception = TemplateDoesNotExist(name, chain=chain)
-    template_cache[name] = copy_exception(exception)
-    raise exception
+    raise TemplateDoesNotExist(name, chain=chain)
