@@ -1,4 +1,5 @@
 import posixpath
+from typing import Any, Dict, List
 
 from django.template.base import Origin
 from django.template.exceptions import TemplateDoesNotExist
@@ -7,7 +8,7 @@ from django.template.loader import _engine_list
 from . import conf
 from .exceptions import InvalidTemplatePath
 
-template_cache = {}
+template_cache = {}  # type: Dict[str, Any]
 
 
 def safe_join(path, base=None):
@@ -44,7 +45,7 @@ def check_possible_template_paths(engine, name):
         2) /templates/news/article.html
         3) /templates/news/article/index.html
     """
-    tried = []
+    tried = []  # type: List[Origin]
 
     # check direct path
     template = _check_template_file(engine, name, tried)
