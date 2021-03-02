@@ -45,5 +45,5 @@ def flatly_path(route, view):
 
 app_name = 'flatly'
 urlpatterns = [
-    flatly_path(r'^(?P<path>.*)$', serve),
+    flatly_path(r'^(?P<path>.*)/$', serve)
 ]
