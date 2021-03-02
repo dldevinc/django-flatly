@@ -47,19 +47,19 @@ def check_possible_template_paths(engine, name):
     """
     tried = []  # type: List[Origin]
 
-    # check direct path
+    # check exact path
     template = _check_template_file(engine, name, tried)
     if template is not None:
         return template
 
-    # check extensions
+    # try to add an extension
     for ext in conf.EXTENSIONS:
         template_name_with_extension = '.'.join([name, ext])
         template = _check_template_file(engine, template_name_with_extension, tried)
         if template is not None:
             return template
 
-    # check inner "index" file
+    # try to find "index" file in subfolder
     for ext in conf.EXTENSIONS:
         index_template_name = posixpath.join(name, 'index.{}'.format(ext))
         template = _check_template_file(engine, index_template_name, tried)

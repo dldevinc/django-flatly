@@ -4,22 +4,29 @@ from flatly.helpers import get_template_by_name
 
 
 class TestTemplates:
-    def test_index(self):
+    def test_empty_path(self):
         template = get_template_by_name('')
         assert template.origin.name.endswith('tests/templates/index.html')
 
-    def test_index_by_name(self):
-        # unique template in /templates/ folder
+    def test_index_page_by_name(self):
         template = get_template_by_name('index')
         assert template.origin.name.endswith('tests/templates/index.html')
 
+    def test_index_by_name_with_extenstion(self):
+        template = get_template_by_name('index.html')
+        assert template.origin.name.endswith('tests/templates/index.html')
+
     def test_app_template(self):
-        # unique template in application folder
+        # get template from application folder
+        template = get_template_by_name('app')
+        assert template.origin.name.endswith('tests/app/templates/app/index.html')
+
+    def test_app_fullpath_template(self):
         template = get_template_by_name('app/index')
         assert template.origin.name.endswith('tests/app/templates/app/index.html')
 
-    def test_default_loaders_priority(self):
-        # template in /templates/ overrides an application template with the same name
+    def test_template_loaders_order(self):
+        # template in /templates/ overrides an application template
         template = get_template_by_name('app/section')
         assert template.origin.name.endswith('tests/templates/app/section.html')
 
