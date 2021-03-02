@@ -98,13 +98,3 @@ List of file extensions to iterate over all matching files.
 FLATLY_EXTENSIONS = ['html', 'jinja2']
 ```
 Defaults to `['html']`.
-
-## Development and Testing
-After cloning the Git repository, you should install this
-in a virtualenv and set up for development:
-```shell script
-virtualenv .venv
-source .venv/bin/activate
-pip install -r ./requirements_dev.txt
-pre-commit install
-```
