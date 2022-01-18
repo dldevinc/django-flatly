@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.2.2](https://github.com/dldevinc/django-flatly/tree/v0.2.2) - 2022-01-18
+### Bug Fixes
+- Add an ability to serve home page.
+
 ## [0.2.1](https://github.com/dldevinc/django-flatly/tree/v0.2.1) - 2021-03-02
 - Fix trailing slash for flatly pages
 

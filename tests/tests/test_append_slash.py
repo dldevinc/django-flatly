@@ -18,6 +18,10 @@ class TestAppendSlash:
         response = self.client.get('/admin/login/')
         assert response.status_code == 200
 
+    def test_home_page(self):
+        response = self.client.get('/')
+        assert response.status_code == 200
+
     def test_app_page_without_slash(self):
         response = self.client.get('/app')
         assert response.status_code == 301
