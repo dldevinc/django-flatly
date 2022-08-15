@@ -7,6 +7,11 @@ Helps to separate deployment of front- and backend.
 [![Build Status](https://github.com/dldevinc/django-flatly/actions/workflows/tests.yml/badge.svg)](https://github.com/dldevinc/django-flatly)
 [![Software license](https://img.shields.io/pypi/l/django-flatly.svg)](https://pypi.org/project/django-flatly/)
 
+## Compatibility
+
+* `django` >= 2.0
+* `python` >= 3.6
+
 ## Installation
 Install the latest release with pip:
 
