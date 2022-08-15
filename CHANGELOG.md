@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.3.0](https://github.com/dldevinc/django-flatly/tree/v0.3.0) - 2022-08-15
+### Features
+- Added support for Django 4.1.
+
 ## [0.2.2](https://github.com/dldevinc/django-flatly/tree/v0.2.2) - 2022-01-18
 ### Bug Fixes
 - Add an ability to serve home page.
