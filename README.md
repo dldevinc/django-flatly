@@ -62,15 +62,13 @@ Suppose you are requesting the page `/account/user-profile/`,
 ### Template root
 
 `django-flatly` based on Django's `get_template` function.
-So, any user can access any template on your website. You can
-restrict access to certain templates by adding the following:
+So, user can access any template on your website. You can
+restrict access to certain templates by adding the path prefix 
+to the template name before search:
 
 ```python
 FLATLY_TEMPLATE_ROOT = 'flatly'
 ```
-
-By adding the above configuration `django-flatly` will add
-specified path prefix to the template name before search.
 
 Note that `flatly` folder can be located in both root and
 application template directories.
