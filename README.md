@@ -1,4 +1,5 @@
 # django-flatly
+
 Serving flat pages with Django without views and database.
 
 Helps to separate deployment of front- and backend.
@@ -9,15 +10,17 @@ Helps to separate deployment of front- and backend.
 
 ## Compatibility
 
-* `django` >= 2.0
-* `python` >= 3.6
+-   `django` >= 2.0
+-   `python` >= 3.6
 
 ## Installation
+
 Install the latest release with pip:
 
 `pip install django-flatly`
 
 Than add a URL to urlpatterns:
+
 ```python
 # urls.py
 urlpatterns = [
@@ -29,32 +32,35 @@ urlpatterns = [
 
 ## Quick start
 
-1) In your root template directory create `flatly` folder.
+1. In your root template directory create `flatly` folder.
 
-2) Define `FLATLY_TEMPLATE_ROOT` setting:
+2. Define `FLATLY_TEMPLATE_ROOT` setting:
+
     ```python
     FLATLY_TEMPLATE_ROOT = 'flatly'
     ```
 
-3) Any `.html` files you create in your `flatly` directory
-will be automatically served. So if you create a new file
-`flatly/about_us/overview.html` then it will be visible at
-`/about-us/overview/`.
+3. Any `.html` files you create in your `flatly` directory
+   will be automatically served. So if you create a new file
+   `flatly/about_us/overview.html` then it will be visible at
+   `/about-us/overview/`.
 
-Note that `django-flatly` automatically replaces underscores (_)
+Note that `django-flatly` automatically replaces underscores (\_)
 with dashes (-).
 
 ## Search path
 
 Suppose you are requesting the page `/account/user-profile/`,
 `django-flatly` will render the first template that exists:
-1) `${FLATLY_TEMPLATE_ROOT}/account/user_profile`
-2) `${FLATLY_TEMPLATE_ROOT}/account/user_profile.html`
-3) `${FLATLY_TEMPLATE_ROOT}/account/user_profile/index.html`
+
+1. `${FLATLY_TEMPLATE_ROOT}/account/user_profile`
+2. `${FLATLY_TEMPLATE_ROOT}/account/user_profile.html`
+3. `${FLATLY_TEMPLATE_ROOT}/account/user_profile/index.html`
 
 ## Settings
 
 ### Template root
+
 `django-flatly` based on Django's `get_template` function.
 So, any user can access any template on your website. You can
 restrict access to certain templates by adding the following:
@@ -72,6 +78,7 @@ application template directories.
 Defaults to `flatly`.
 
 ### Template engine
+
 You can restrict the template search to a particular template engine.
 
 ```python
@@ -81,6 +88,7 @@ FLATLY_ENGINE = 'jinja2'
 Defaults to `None`.
 
 ### Template caching
+
 By default (when `DEBUG` is `True`), the template system
 searches, reads and compiles your templates every time
 they’re rendered. It's convenient for local development,
@@ -99,8 +107,11 @@ requests to load the same template.
 Defaults to `True` is `settings.DEBUG` is `False`.
 
 ### Extensions
+
 List of file extensions to iterate over all matching files.
+
 ```python
 FLATLY_EXTENSIONS = ['html', 'jinja2']
 ```
+
 Defaults to `['html']`.
