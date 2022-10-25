@@ -9,7 +9,6 @@ from . import conf
 from .helpers import get_template_by_name, safe_join
 from .views import serve
 
-
 if django.VERSION >= (4, 1):  # noqa
     class FlatlyURLPattern(URLPattern):
         def resolve(self, path):

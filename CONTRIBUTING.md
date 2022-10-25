@@ -11,11 +11,11 @@
 1. Create a virtualenv
     ```shell
     cd django-flatly
-    virtualenv env
+    virtualenv .venv
     ```
 1. Activate virtualenv
     ```shell
-    source env/bin/activate
+    source .venv/bin/activate
     ```
 1. Install dependencies as well as a local editable copy of the library
     ```shell
@@ -24,8 +24,9 @@
     ```
 
 #### Pre-Commit Hooks
-We use [`pre-commit`](https://pre-commit.com/) hooks to simplify linting 
-and ensure consistent formatting among contributors. Use of `pre-commit` 
+
+We use [`pre-commit`](https://pre-commit.com/) hooks to simplify linting
+and ensure consistent formatting among contributors. Use of `pre-commit`
 is not a requirement, but is highly recommended.
 
 ```shell
@@ -33,7 +34,7 @@ pip install pre-commit
 pre-commit install
 ```
 
-Commiting will now automatically run the local hooks and ensure that 
+Commiting will now automatically run the local hooks and ensure that
 your commit passes all lint checks.
 
 ## Testing
