@@ -2,7 +2,7 @@ from django.test.client import Client
 
 
 class TestTemplateRoot:
-    def setup(self):
+    def setup_method(self):
         self.client = Client()
 
     def test_page_with_empty_setting(self, flatly_conf):
@@ -27,7 +27,7 @@ class TestTemplateRoot:
 
 
 class TestExtensions:
-    def setup(self):
+    def setup_method(self):
         self.client = Client()
 
     def test_extension_not_found(self, flatly_conf):

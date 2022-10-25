@@ -4,7 +4,7 @@ from django.test.client import Client
 
 
 class TestAppendSlash:
-    def setup(self):
+    def setup_method(self):
         self.client = Client()
 
     def test_admin_page_without_slash(self):
