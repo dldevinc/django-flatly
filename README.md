@@ -63,7 +63,7 @@ Suppose you are requesting the page `/account/user-profile/`,
 
 `django-flatly` based on Django's `get_template` function.
 So, user can access any template on your website. You can
-restrict access to certain templates by adding the path prefix 
+restrict access to certain templates by adding the path prefix
 to the template name before search:
 
 ```python
